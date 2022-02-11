@@ -80,7 +80,7 @@
         else{
 
            // se houver um marcador armazenado, solicite ao usuário que retome do local anterior
-            if (confirm("Deseja retornar para onde parou?")){
+            if {
                 currentPage = parseInt(bookmark, 10);
             }
             else{
@@ -204,11 +204,7 @@
         // devemos utilizar essa função quando tiver teste envolvido, ver o template assessmenttemplate.html para modelar questões
      // chamado da página para registrar os resultados de um teste
     // passa na pontuação como porcentagem
-    function RecordTest(score){
-        ScormProcessSetValue("cmi.core.score.raw", score);
-        ScormProcessSetValue("cmi.core.score.min", "0");
-        ScormProcessSetValue("cmi.core.score.max", "100");
-
+    
         
        // se obtivermos um resultado do teste, defina o status da lição como aprovado / reprovado em vez de concluído
        // considere 70% de aprovação
