@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" identifier="MANIFEST-269334CD-542D-4A41-3537-1EC72BCA5FB6" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <organizations default="ORG-FAFF52A3-A2F2-D825-F013-D304F5F913F0">
+    <organization identifier="ORG-FAFF52A3-A2F2-D825-F013-D304F5F913F0" structure="hierarchical">
+      <title>2w - Compliance</title>
+      <item identifier="ITEM-772C0284-C73B-8130-F720-410F3741A41C" isvisible="true" identifierref="RES-24EDE6D1-78D3-D5B1-92CA-2245C8FE368C">
+        <title>2w - Compliance</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES-24EDE6D1-78D3-D5B1-92CA-2245C8FE368C" type="webcontent" adlcp:scormtype="sco" href="start.html">
+      <file href="start.html" />
+      <file href="css/normalize.css" />
+      <file href="css/webflow.css" />
+      <file href="css/2wenergia-compliance.webflow.css" />
+    </resource>
+    <resource identifier="js" type="webcontent" adlcp:scormtype="sco">
+      <file href="js/iframenavegation.js"/>      
+      <file href="js/scormfunctions.js" />
+      <file href="js/scormnavegation.js"/> 
+      <file href="js/webflow.js" />     
+    </resource>
+  </resources>
+</manifest>
