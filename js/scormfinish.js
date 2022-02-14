@@ -146,17 +146,6 @@
      // chamado da página para registrar os resultados de um teste
     // passa na pontuação como porcentagem
     
-        
-       // se obtivermos um resultado do teste, defina o status da lição como aprovado / reprovado em vez de concluído
-       // considere 70% de aprovação
-        if (score >= 70){
-            ScormProcessSetValue("cmi.core.lesson_status", "passed");
-        }
-        else{
-            ScormProcessSetValue("cmi.core.lesson_status", "failed");
-        }
-
-    
    // SCORM requer tempo para ser formatado de uma maneira específica
     function ConvertMilliSecondsToSCORMTime(intTotalMilliseconds, blnIncludeFraction){
   
