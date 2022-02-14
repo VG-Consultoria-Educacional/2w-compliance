@@ -109,17 +109,10 @@ function doStart() {
     // se não houver um marcador armazenado, inicie o usuário na primeira página
     if (bookmark == "") {
         currentPage = 0;
-    }
-    else {
-
-        // se houver um marcador armazenado, solicite ao usuário que retome do local anterior
-        if (confirm("Deseja retornar para onde parou?")) {
-            currentPage = parseInt(bookmark, 10);
-        }
-        else {
-            currentPage = 0;
-        }
-    }
+      } else {
+        // if there is a bookmark stored, resume from that bookmarked page 
+        currentPage = parseInt(bookmark, 10);
+      }
 
     goToPage();
 }
