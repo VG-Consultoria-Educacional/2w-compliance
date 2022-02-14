@@ -230,7 +230,7 @@ function doExit() {
     doUnload(true);
 }
 
-// devemos utilizar essa função quando tiver teste envolvido, ver o template assessmenttemplate.html para modelar questões
+// devemos utilizar essa função quando tiver teste envolvido,  para modelar questões
 // chamado da página para registrar os resultados de um teste
 // passa na pontuação como porcentagem
 function RecordTest(score) {

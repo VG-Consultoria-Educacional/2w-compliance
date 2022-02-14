@@ -13,7 +13,7 @@ function nextPage(){
   function exitCourse(){
     exit = parent.document.getElementById('butExit');
     exit.onclick();  
-    document.getElementById("btn-fechar").style.visibility='hidden';  
+    document.getElementById("btn-finalizar").style.visibility='hidden';  
   }
   //Nesse material dessa empresa a home page é considerado a pagina 1
   function homePage(){

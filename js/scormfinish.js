@@ -51,46 +51,7 @@
     var processedUnload = false;
     var reachedEnd = false;
     
-    function doStart(){
-        
-        //obtenha o tamanho do iFrame corretamente e configure
-        SetupIFrame();
-        
-        //registrar o tempo em que o aluno iniciou o SCO para que possamos relatar o tempo total
-        startTimeStamp = new Date();
-        
-        //inicializar a comunicação com o LMS
-        ScormProcessInitialize();
-        
-        //é uma prática recomendada definir o status da lição como incompleto quando
-        //primeiro lançamento do curso (se o curso ainda não estiver concluído)
-        var completionStatus = ScormProcessGetValue("cmi.core.lesson_status");
-        if (completionStatus == "not attempted"){
-            ScormProcessSetValue("cmi.core.lesson_status", "incomplete");
-        }
-        
-        // veja se o usuário armazenou um marcador anteriormente (não verifique se há erros
-        // porque a função cmi.core.lesson_location pode não ser inicializada
-        var bookmark = ScormProcessGetValue("cmi.core.lesson_location");
-         
-        // se não houver um marcador armazenado, inicie o usuário na primeira página
-        if (bookmark == ""){
-            currentPage = 0;
-        }
-        else{
 
-           // se houver um marcador armazenado, solicite ao usuário que retome do local anterior
-            if {
-                currentPage = parseInt(bookmark, 10);
-            }
-            else{
-                currentPage = 0;
-            }
-        }
-        
-        goToPage();
-    }
-    
     //Funções de navegação de página do IFRAME
     function goToPage(){
     
@@ -180,27 +141,7 @@
         goToPage();   
     }
     
-    function doExit(){
-
-        // observe o uso de curto-circuito AND. Se o usuário chegou ao fim, não avise.
-        // basta sair normalmente e enviar os resultados.
-        if (reachedEnd == false && confirm("Deseja salvar o progresso para continuar mais tarde?")){
-            //set exit to suspend
-            ScormProcessSetValue("cmi.core.exit", "suspend");
-        }
-        else{
-            
-            // define a saída para normal
-            ScormProcessSetValue("cmi.core.exit", "");
-        }
         
-        // processa o manipulador de descarregamento para fechar a sessão.
-        // a presença de um adl.nav.request fará com que o LMS
-        // retira o conteúdo do usuário.
-        doUnload(true);
-        
-    }
-    
         // devemos utilizar essa função quando tiver teste envolvido, ver o template assessmenttemplate.html para modelar questões
      // chamado da página para registrar os resultados de um teste
     // passa na pontuação como porcentagem
@@ -214,7 +155,7 @@
         else{
             ScormProcessSetValue("cmi.core.lesson_status", "failed");
         }
-    }
+
     
    // SCORM requer tempo para ser formatado de uma maneira específica
     function ConvertMilliSecondsToSCORMTime(intTotalMilliseconds, blnIncludeFraction){

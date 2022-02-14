@@ -200,15 +200,3 @@ function ScormProcessSetValue(element, value){
     }
     
 }
-function RecordTest(score){
-    ScormProcessSetValue("cmi.core.score.raw", score);
-    ScormProcessSetValue("cmi.core.score.min", "0");
-    ScormProcessSetValue("cmi.core.score.max", "100");
-    
-    if (score >= 60){
-        ScormProcessSetValue("cmi.core.lesson_status", "passed");
-    }
-    else{
-        ScormProcessSetValue("cmi.core.lesson_status", "failed");
-    }
-}
