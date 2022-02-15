@@ -132,7 +132,6 @@ function goToPage() {
     if (currentPage == 0) {
         nextButton.disabled = false;
         prevButton.disabled = true;
-
     }
     else if (currentPage == (pageArray.length - 1)) {
         nextButton.disabled = true;
@@ -209,20 +208,27 @@ function doExit() {
 // devemos utilizar essa função quando tiver teste envolvido,  para modelar questões
 // chamado da página para registrar os resultados de um teste
 // passa na pontuação como porcentagem
-function RecordTest(score) {
-    ScormProcessSetValue("cmi.core.score.raw", score);
-    ScormProcessSetValue("cmi.core.score.min", "0");
-    ScormProcessSetValue("cmi.core.score.max", "100");
+function RecordTest() {
+    // TODO: Implementar recebimento de parametro de nota para função
+    ScormProcessSetValue('cmi.core.score.raw', 70);
+    ScormProcessSetValue("cmi.core.lesson_status", "passed");
 
+    /*
+    ScormProcessSetValue("cmi.core.score.raw", score); // Define o score para o elemto.
+    ScormProcessSetValue("cmi.core.score.min", "0"); // Define nota minima
+    ScormProcessSetValue("cmi.core.score.max", "100"); // Define nota maxima
+    */
 
-    // se obtivermos um resultado do teste, defina o status da lição como aprovado / reprovado em vez de concluído
+    // // se obtivermos um resultado do teste, defina o status da lição como aprovado / reprovado em vez de concluído
+    /*
     // considere 70% de aprovação
     if (score >= 70) {
-        ScormProcessSetValue("cmi.core.lesson_status", "passed");
+        ScormProcessSetValue("cmi.core.lesson_status", "passed"); // Define o valor aprovado
     }
     else {
-        ScormProcessSetValue("cmi.core.lesson_status", "failed");
+        ScormProcessSetValue("cmi.core.lesson_status", "failed"); // Define o valor reprovado
     }
+    */
 }
 
 // SCORM requer tempo para ser formatado de uma maneira específica
