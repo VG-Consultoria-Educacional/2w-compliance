@@ -41,7 +41,7 @@ function SetupIFrame() {
 //quando eles estiveram na mesma pasta do start
 //trocar páginas aqui
 /*************************************/
-var pageArray = new Array(18);
+var pageArray = new Array(17);
 
 pageArray[0] = "index.html";
 pageArray[1] = "tela-01.html";
@@ -61,7 +61,6 @@ pageArray[14] = "tela-13.html";
 pageArray[15] = "tela-14.html";
 pageArray[16] = "tela-15.html";
 pageArray[17] = "tela-16.html";
-pageArray[18] = "referencias.html";
 
 
 /*************************************/
@@ -204,25 +203,9 @@ function setMenuPage(page) {
 }
 
 function doExit() {
-
-    // observe o uso de curto-circuito AND. Se o usuário chegou ao fim, não avise.
-    // basta sair normalmente e enviar os resultados.
-    if (reachedEnd == false && confirm("Deseja salvar o progresso para continuar mais tarde?")) {
-        //set exit to suspend
-        ScormProcessSetValue("cmi.core.exit", "suspend");
-    }
-    else {
-
-        // define a saída para normal
-        ScormProcessSetValue("cmi.core.exit", "");
-    }
-
-    // processa o manipulador de descarregamento para fechar a sessão.
-    // a presença de um adl.nav.request fará com que o LMS
-    // retira o conteúdo do usuário.
+    ScormProcessSetValue("cmi.core.exit", "");
     doUnload(true);
 }
-
 // devemos utilizar essa função quando tiver teste envolvido,  para modelar questões
 // chamado da página para registrar os resultados de um teste
 // passa na pontuação como porcentagem
