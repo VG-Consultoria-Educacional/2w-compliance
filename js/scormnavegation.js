@@ -213,7 +213,6 @@ function RecordTest(nota, aprovar) {
     // nota = parseInt(document.getElementById('user_score').value);
 
     if(nota >= aprovar) {
-        console.log('oi');
         ScormProcessSetValue('cmi.core.score.raw', nota);
         ScormProcessSetValue("cmi.core.lesson_status", "passed");
     }
