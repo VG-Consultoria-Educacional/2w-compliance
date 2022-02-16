@@ -209,6 +209,8 @@ function doExit() {
 // chamado da página para registrar os resultados de um teste
 // passa na pontuação como porcentagem
 function RecordTest() {
+    // resgtar do botão id="user_score" a nota do aluno.
+    
     // TODO: Implementar recebimento de parametro de nota para função
     ScormProcessSetValue('cmi.core.score.raw', 70);
     ScormProcessSetValue("cmi.core.lesson_status", "passed");

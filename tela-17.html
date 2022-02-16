@@ -42,14 +42,15 @@
         <h2 class="heading-7">Você chegou ao final do curso!</h2>
         <div class="text-block-16">Para concluir, clique no botão abaixo, ou clique em referências.</div>
         <a onclick="exitCourse();" class="btn-finalizar w-button">Finalizar</a>
+        <!-- <a href="#" class="btn-finalizar w-button">Finalizar</a> -->
       </div>
       <a href="referencias.html" class="btn-voltar w-button">Referências</a>
     </div>
   </div>
   <script>
     document.getElementById("nota").addEventListener("click", function( event ) {
-      let nota = 70;
-      let aprovar = 70;
+      let nota = 50;
+      let aprovar = 60;
 
       try {
         // TODO: Implementar, envio de variável para o elemeto buttonRecordTest, com a nota do usuário vinda do GAME, ou de outro calculo.
@@ -59,6 +60,8 @@
         if(nota >= aprovar) {
           this.style.display = 'none' // Oculta o botão clicado
           document.getElementById("finalizar").style.display = 'block';
+        } else {
+          // reiniciar
         }
       } catch (error) {
         console.log(error);
