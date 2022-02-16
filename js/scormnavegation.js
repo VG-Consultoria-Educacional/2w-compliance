@@ -210,10 +210,13 @@ function doExit() {
 // passa na pontuação como porcentagem
 function RecordTest() {
     // resgtar do botão id="user_score" a nota do aluno.
-    
-    // TODO: Implementar recebimento de parametro de nota para função
-    ScormProcessSetValue('cmi.core.score.raw', 70);
-    ScormProcessSetValue("cmi.core.lesson_status", "passed");
+    nota = parseInt(document.getElementById('user_score').value);
+
+    if(nota >= 60) {
+        console.log('oi');
+        ScormProcessSetValue('cmi.core.score.raw', nota);
+        ScormProcessSetValue("cmi.core.lesson_status", "passed");
+    }
 
     /*
     ScormProcessSetValue("cmi.core.score.raw", score); // Define o score para o elemto.

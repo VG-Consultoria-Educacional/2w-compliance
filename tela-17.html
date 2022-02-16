@@ -49,13 +49,13 @@
   </div>
   <script>
     document.getElementById("nota").addEventListener("click", function( event ) {
-      let nota = 50;
+      let nota = 60;
       let aprovar = 60;
 
       try {
-        // TODO: Implementar, envio de variável para o elemeto buttonRecordTest, com a nota do usuário vinda do GAME, ou de outro calculo.
+        parent.document.getElementById('user_score').value = nota;
         parent.document.getElementById('butRecordTest').onclick();
-        
+
         // Exibe ou oculta o botão quando aprovado.
         if(nota >= aprovar) {
           this.style.display = 'none' // Oculta o botão clicado
