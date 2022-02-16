@@ -208,11 +208,11 @@ function doExit() {
 // devemos utilizar essa função quando tiver teste envolvido,  para modelar questões
 // chamado da página para registrar os resultados de um teste
 // passa na pontuação como porcentagem
-function RecordTest() {
+function RecordTest(nota, aprovar) {
     // resgtar do botão id="user_score" a nota do aluno.
-    nota = parseInt(document.getElementById('user_score').value);
+    // nota = parseInt(document.getElementById('user_score').value);
 
-    if(nota >= 60) {
+    if(nota >= aprovar) {
         console.log('oi');
         ScormProcessSetValue('cmi.core.score.raw', nota);
         ScormProcessSetValue("cmi.core.lesson_status", "passed");

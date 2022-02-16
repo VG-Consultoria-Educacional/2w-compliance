@@ -53,8 +53,7 @@
       let aprovar = 60;
 
       try {
-        parent.document.getElementById('user_score').value = nota;
-        parent.document.getElementById('butRecordTest').onclick();
+        parent.RecordTest(nota, aprovar);
 
         // Exibe ou oculta o botão quando aprovado.
         if(nota >= aprovar) {
