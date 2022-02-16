@@ -11,7 +11,6 @@ Actions.attributes.add('itens',{
 
 // initialize code called once per entity
 Actions.prototype.initialize = function() {
-    
     //this.scene        = this.sceneName();
     //this.changeScene();
     self = this;
@@ -737,6 +736,8 @@ function endGame(){
     
     audio_error = pc.app.root.findByName('audio_music');
     audio_error.sound.stop();
+    
+    parent.finalizarquiz(scorePercent);
     
 }
 
